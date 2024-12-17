@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "pattern": [
+      "DDD",
+      "DID",
+      "DDD"
+    ],
+    "key": {
+      "D": {
+        "item": "minecraft:diamond"
+      },
+      "I": {
+        "item": "enderitemod:enderite"
+      }
+    },
+    "result": {
+      "id": "enderitemod:enderite_ingot",
+      "count": 1
+    }
+  }
+  

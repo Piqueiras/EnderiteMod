@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:reference",
+          "name": "minecraft:chests/end_city_treasure"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "enderitemod:enderite",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:empty",
+          "weight": 90
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 2.0,
+        "max": 6.0
+      }
+    }
+  ],
+  "random_sequence": "enderitemod:chests/combined_end_city_loot"
+}

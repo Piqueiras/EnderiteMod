@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "I I",
+      "I I"
+    ],
+    "key": {
+      "I": {
+        "item": "enderitemod:enderite_ingot"
+      }
+    },
+    "result": {
+      "id": "enderitemod:enderite_boots",
+      "count": 1
+    }
+  }
+  
