@@ -1,7 +1,6 @@
 {
-    "parent": "item/generated",
-    "textures": {
-      "layer0": "enderitemod:item/enderite_boots"
-    }
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "enderitemod:item/enderite_boots"
   }
-  
+}
