@@ -1,15 +1,20 @@
 package enderitemod;
 
 import com.mojang.logging.LogUtils;
+import enderitemod.armor.EnderiteArmorHandler;
+import enderitemod.client.ClientDoubleJumpHandler;
 import enderitemod.item.ModArmorMaterials;
 import enderitemod.item.ModItems;
 import enderitemod.loot.ModLootModifiers;
+import enderitemod.network.ModPackets;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import org.slf4j.Logger;
 
@@ -20,10 +25,17 @@ public class EnderiteMod {
 
     public EnderiteMod(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(ModPackets::register);
 
         ModItems.register(modEventBus);
         ModArmorMaterials.register(modEventBus);
         ModLootModifiers.register(modEventBus);
+
+        EnderiteArmorHandler.register();
+
+        if (FMLEnvironment.dist == Dist.CLIENT) {
+            ClientDoubleJumpHandler.init();
+        }
 
         modEventBus.addListener(this::addCreative);
 
